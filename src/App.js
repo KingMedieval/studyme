@@ -1,6 +1,6 @@
 import './App.css';
-import Question from './components/elements/Question/Question.jsx'
 import MathCalc from "./components/pages/SAT/mathCalc/mathCalc";
+import NotFound from "./components/pages/NotFound/NotFound";
 import * as React from "react";
 import {
     BrowserRouter as Router,
@@ -19,19 +19,26 @@ function Home() {
 }
 function App() {
   return (
-      <Router>
-          <Routes>
-              <Route
-                  path="/"
-                  element={<Home />}
-              />
+      <>
+          <Router>
+            <Routes>
+                <Route
+                    path='*'
+                    element={<NotFound />}
+                />
+                <Route
+                    path="/"
+                    element={<Home />}
+                />
 
-              <Route
-                  path="q/sat/math/c/:id"
-                  element={<MathCalc />}
-              />
+                 <Route
+                     path="q/sat/math/c/:id"
+                     element={<MathCalc />}
+                 />
           </Routes>
       </Router>
+      </>
+
   );
 }
 
