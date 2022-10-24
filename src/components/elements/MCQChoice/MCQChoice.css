@@ -1,0 +1,43 @@
+.choice {
+    margin: 0.5em 2%;
+    font-family: "Computer Modern Serif", serif;
+    font-size: 1.4em;
+    padding: 1%;
+    -webkit-user-select: none; /* Safari */
+    -ms-user-select: none; /* IE 10+ */
+    user-select: none;
+    display: flex;
+}
+
+.choiceID {
+    margin-left: 2.5em;
+}
+
+.choiceText {
+    margin-left: 1em;
+
+}
+
+.correct {
+    margin: 0.5em 2%;
+    font-family: "Computer Modern Serif", serif;
+    font-size: 1.4em;
+    padding: 1%;
+    -webkit-user-select: none; /* Safari */
+    -ms-user-select: none; /* IE 10+ */
+    user-select: none;
+    display: flex;
+    background-color: #d9ead3;
+}
+
+.wrong {
+    margin: 0.5em 2%;
+    font-family: "Computer Modern Serif", serif;
+    font-size: 1.4em;
+    padding: 1%;
+    -webkit-user-select: none; /* Safari */
+    -ms-user-select: none; /* IE 10+ */
+    user-select: none;
+    display: flex;
+    background-color: #f4cccc;
+}
