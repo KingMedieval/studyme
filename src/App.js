@@ -1,6 +1,7 @@
 import './App.css';
 import MathCalc from "./components/pages/SAT/mathCalc/mathCalc";
 import NotFound from "./components/pages/NotFound/NotFound";
+import Textbook from "./components/pages/DE/Textbook";
 import * as React from "react";
 import {
     BrowserRouter as Router,
@@ -35,6 +36,10 @@ function App() {
                      path="q/sat/math/c/:id"
                      element={<MathCalc />}
                  />
+                <Route
+                    path="q/DE/textbook/:source/:sec/:id"
+                    element={<Textbook />}
+                />
           </Routes>
       </Router>
       </>
