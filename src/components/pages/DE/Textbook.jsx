@@ -4,7 +4,6 @@ import Question from "../../elements/Question/Question";
 import NotFound from "../NotFound/NotFound";
 import Arrows from "../../elements/Arrows/Arrows";
 import MathInput from "../../elements/MathInput/MathInput";
-import MCQChoice from "../../elements/MCQChoice/MCQChoice";
 
 const Textbook = () => {
     const { source, sec, id } = useParams();

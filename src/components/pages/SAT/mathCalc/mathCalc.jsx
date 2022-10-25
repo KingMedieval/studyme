@@ -8,17 +8,11 @@ import NotFound from "../../NotFound/NotFound";
 
 const MathCalc = () => {
     const { id } = useParams();
-    const [show, setShow] = React.useState(false);
-    const [choice, setChoice] = React.useState('');
+    const [choice, setChoice] = React.useState(sessionStorage.getItem(`SAT.mathCalc.${id}.choice`));
     const correct = 'b';
     const max = '100';
     let navigate = useNavigate();
-
-    if(Number(id) < 1 || Number(id) > Number(max)) {
-        return (
-            <NotFound />
-        )
-    }
+    let defaultShow = false;
 
     const handlePrevClick = () => {
         navigate(`/q/sat/math/c/${Number(id) - 1}`);
@@ -28,6 +22,59 @@ const MathCalc = () => {
         navigate(`/q/sat/math/c/${Number(id) + 1}`);
         navigate(0);
     }
+    if (choice) {
+        defaultShow = true;
+    }
+
+    const [show, setShow] = React.useState(defaultShow);
+
+    const handleClick = (event, cid) => {
+        setShow(true);
+        setChoice(cid);
+        sessionStorage.setItem(`SAT.mathCalc.${id}.choice`, cid)
+    }
+    const handleReset = (event) => {
+        event.preventDefault();
+        setShow(false);
+        setChoice('');
+        sessionStorage.setItem(`SAT.mathCalc.${id}.choice`, '')
+    }
+    if (choice) {
+        if (
+            !(  choice.toLowerCase() === 'a' ||
+                choice.toLowerCase() === 'b' ||
+                choice.toLowerCase() === 'c' ||
+                choice.toLowerCase() === 'd' )) {
+            return (
+                <>
+                    <div style={{pointerEvents: 'none'}}>
+                        <Question
+                            id={id}
+                            qText={"Maria is staying at a hotel that charges $\\$99.95$ per night plus tax for a room. A tax of $8\\%$ is applied to the room rate, and an additional onetime untaxed fee of $\\$5.00$ is charged by the hotel. Which of the following represents Maria’s total charge, in dollars, for staying $x$ nights?"}
+                            qQ={""}
+                        />
+                        <div className={"invalidAns"}>
+                            Invalid answer choice is stored, press reset button to reset.
+                        </div>
+                    </div>
+                    <Arrows
+                    id={id}
+                    last={max}
+                    onReset={(e) => handleReset(e)}
+                    onPrev={handlePrevClick}
+                    onNext={handleNextClick}
+                    />
+                </>
+            );}}
+
+
+    if(Number(id) < 1 || Number(id) > Number(max)) {
+        return (
+            <NotFound />
+        )
+    }
+
+
     const stylesheet = (cid) => {
         if (!show) return 'choice';
 
@@ -38,15 +85,6 @@ const MathCalc = () => {
         }
     };
 
-    const handleClick = (event, cid) => {
-        setShow(true);
-        setChoice(cid);
-    }
-    const handleReset = (event) => {
-        event.preventDefault();
-        setShow(false);
-        setChoice('');
-    }
 
     return(
         <>
@@ -91,7 +129,7 @@ const MathCalc = () => {
             />
         </>
 
-    )
+    );
 }
 
 export default MathCalc;

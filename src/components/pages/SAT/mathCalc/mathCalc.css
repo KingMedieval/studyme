@@ -1,0 +1,9 @@
+.invalidAns{
+    margin: 1em 2%;
+    font-family: "Computer Modern Serif", serif;
+    font-size: 1.4em;
+    padding: 1%;
+    -webkit-user-select: none; /* Safari */
+    -ms-user-select: none; /* IE 10+ */
+    user-select: none;
+}
