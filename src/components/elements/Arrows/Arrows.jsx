@@ -1,9 +1,8 @@
 import React from 'react';
 import './Arrows.css';
-import {useNavigate} from "react-router-dom";
 
 const Arrows = (props) => {
-    let navigate = useNavigate();
+
     let pShow = true;
     let nShow = true;
 
@@ -16,33 +15,24 @@ const Arrows = (props) => {
         nShow = false;
     }
 
-    const handlePrevClick = () => {
-        navigate(`/q/sat/math/c/${Number(props.id) - 1}`);
-        navigate(0);
-    }
-    const handleNextClick = () => {
-        navigate(`/q/sat/math/c/${Number(props.id) + 1}`);
-        navigate(0);
-    }
-
 
     return(
         <div className={'flex'}>
             <button
                 style={{visibility: pShow ? '' : 'hidden'}}
-                onClick={handlePrevClick}>
+                onClick={props.onPrev}>
                 Previous
             </button>
             <div />
             <button
-                onClick={props.onClick}
+                onClick={props.onReset}
             >
                 Reset
             </button>
             <div />
             <button
                 style={{visibility: nShow ? '' : 'hidden'}}
-                onClick={handleNextClick}>
+                onClick={props.onNext}>
                 Next
             </button>
         </div>

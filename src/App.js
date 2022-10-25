@@ -31,7 +31,6 @@ function App() {
                     path="/"
                     element={<Home />}
                 />
-
                  <Route
                      path="q/sat/math/c/:id"
                      element={<MathCalc />}

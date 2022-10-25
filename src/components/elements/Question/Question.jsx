@@ -15,6 +15,11 @@ const Question = (props) => {
                 <Latex>
                     {props.qText}
                 </Latex>
+                <div style={{
+                    marginBottom: '1em'}}/>
+                <Latex>
+                    {props.qQ}
+                </Latex>
             </div>
 
         </div>

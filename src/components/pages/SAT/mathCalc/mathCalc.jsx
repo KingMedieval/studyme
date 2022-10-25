@@ -1,5 +1,5 @@
 import React from 'react';
-import {useParams} from "react-router-dom";
+import {useNavigate, useParams} from "react-router-dom";
 import './mathCalc.css';
 import Question from "../../../elements/Question/Question";
 import MCQChoice from "../../../elements/MCQChoice/MCQChoice";
@@ -12,6 +12,7 @@ const MathCalc = () => {
     const [choice, setChoice] = React.useState('');
     const correct = 'b';
     const max = '100';
+    let navigate = useNavigate();
 
     if(Number(id) < 1 || Number(id) > Number(max)) {
         return (
@@ -19,6 +20,14 @@ const MathCalc = () => {
         )
     }
 
+    const handlePrevClick = () => {
+        navigate(`/q/sat/math/c/${Number(id) - 1}`);
+        navigate(0);
+    }
+    const handleNextClick = () => {
+        navigate(`/q/sat/math/c/${Number(id) + 1}`);
+        navigate(0);
+    }
     const stylesheet = (cid) => {
         if (!show) return 'choice';
 
@@ -41,10 +50,11 @@ const MathCalc = () => {
 
     return(
         <>
-            <div style={{ 'pointer-events': show ? 'none' : '' }}>
+            <div style={{ pointerEvents: show ? 'none' : '' }}>
                 <Question
                     id={id}
                     qText={"Maria is staying at a hotel that charges $\\$99.95$ per night plus tax for a room. A tax of $8\\%$ is applied to the room rate, and an additional onetime untaxed fee of $\\$5.00$ is charged by the hotel. Which of the following represents Maria’s total charge, in dollars, for staying $x$ nights?"}
+                    qQ={""}
                 />
                 <MCQChoice
                     cid={"a"}
@@ -75,7 +85,9 @@ const MathCalc = () => {
             <Arrows
                 id={id}
                 last={max}
-                onClick={(e) => handleReset(e)}
+                onReset={(e) => handleReset(e)}
+                onPrev={handlePrevClick}
+                onNext={handleNextClick}
             />
         </>
 
