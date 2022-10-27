@@ -3,7 +3,6 @@ import { addStyles, EditableMathField } from "react-mathquill";
 import "./MathInput.css";
 import Latex from "react-latex-next";
 import MathKeyboard from "../MathKeyboard/MathKeyboard";
-import mathKeyboard from "../MathKeyboard/MathKeyboard";
 
 addStyles();
 
