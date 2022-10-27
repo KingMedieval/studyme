@@ -1,168 +1,290 @@
 import React from "react";
 import './MathKeyboard.css';
 
-const MathKeyboard = () => {
+const MathKeyboard = (props) => {
 
     return (
       <div className={'keyboard'}>
           <div>
-              <button>
-                  hello
+              <button
+                  onClick={props.handleA1}
+              >
+                  {props.a1}
               </button>
-              <button>
-                  hello
+              <button
+                  onClick={props.handleA2}
+              >
+                  {props.a2}
               </button>
-              <button>
-                  hello
+              <button
+                  onClick={props.handleA3}
+              >
+                  {props.a3}
               </button>
-              <button>
-                  hello
-              </button>
-              <button>
-                  hello
-              </button>
-              <button>
-                  hello
-              </button>
-              <button>
-                  hello
-              </button>
-              <button>
-                  hello
-              </button>
-              <button>
-                  hello
-              </button>
-              <button>
-                  hello
+              <button
+                  onClick={props.handleA4}
+              >
+                  {props.a4}
               </button>
           </div>
           <div>
-              <button>
-                  hello
+              <button
+                  onClick={props.handleB1}
+              >
+                  {props.b1}
               </button>
-              <button>
-                  hello
+              <button
+                  onClick={props.handleB2}
+              >
+                  {props.b2}
               </button>
-              <button>
-                  hello
+              <button
+                  onClick={props.handleB3}
+              >
+                  {props.b3}
               </button>
-              <button>
-                  hello
+              <button
+                  onClick={props.handleB4}
+              >
+                  {props.b4}
               </button>
-              <button>
-                  hello
+              <button
+                  onClick={props.handleB5}
+              >
+                  {props.b5}
               </button>
-              <button>
-                  hello
+              <button
+                  onClick={props.handleB6}
+              >
+                  {props.b6}
               </button>
-              <button>
-                  hello
+              <button
+                  onClick={props.handleB7}
+              >
+                  {props.b7}
               </button>
-              <button>
-                  hello
+              <button
+                  onClick={props.handleB8}
+              >
+                  {props.b8}
               </button>
-              <button>
-                  hello
+              <button
+                  onClick={props.handleB9}
+              >
+                  {props.b9}
               </button>
-              <button>
-                  hello
-              </button>
-          </div>
-          <div>
-              <button>
-                  hello
-              </button>
-              <button>
-                  hello
-              </button>
-              <button>
-                  hello
-              </button>
-              <button>
-                  hello
-              </button>
-              <button>
-                  hello
-              </button>
-              <button>
-                  hello
-              </button>
-              <button>
-                  hello
-              </button>
-              <button>
-                  hello
-              </button>
-              <button>
-                  hello
-              </button>
-              <button>
-                  hello
+              <button
+                  onClick={props.handleB10}
+              >
+                  {props.b10}
               </button>
           </div>
           <div>
-              <button>
-                  hello
+              <button
+                  onClick={props.handleC1}
+              >
+                  {props.c1}
               </button>
-              <button>
-                  hello
+              <button
+                  onClick={props.handleC2}
+              >
+                  {props.c2}
               </button>
-              <button>
-                  hello
+              <button
+                  onClick={props.handleC3}
+              >
+                  {props.c3}
               </button>
-              <button>
-                  hello
+              <button
+                  onClick={props.handleC4}
+              >
+                  {props.c4}
               </button>
-              <button>
-                  hello
+              <button
+                  onClick={props.handleC5}
+              >
+                  {props.c5}
               </button>
-              <button>
-                  hello
+              <button
+                  onClick={props.handleC6}
+              >
+                  {props.c6}
               </button>
-              <button>
-                  hello
+              <button
+                  onClick={props.handleC7}
+              >
+                  {props.c7}
               </button>
-              <button>
-                  hello
+              <button
+                  onClick={props.handleC8}
+              >
+                  {props.c8}
               </button>
-              <button>
-                  hello
+              <button
+                  onClick={props.handleC9}
+              >
+                  {props.c9}
               </button>
-              <button>
-                  hello
+              <button
+                  onClick={props.handleC10}
+              >
+                  {props.c10}
               </button>
           </div>
           <div>
-              <button>
-                  hello
+              <button
+                  onClick={props.handleD1}
+              >
+                  {props.d1}
               </button>
-              <button>
-                  hello
+              <button
+                  onClick={props.handleD2}
+              >
+                  {props.d2}
               </button>
-              <button>
-                  hello
+              <button
+                  onClick={props.handleD3}
+              >
+                  {props.d3}
               </button>
-              <button>
-                  hello
+              <button
+                  onClick={props.handleD4}
+              >
+                  {props.d4}
               </button>
-              <button>
-                  hello
+              <button
+                  onClick={props.handleD5}
+              >
+                  {props.d5}
               </button>
-              <button>
-                  hello
+              <button
+                  onClick={props.handleD6}
+              >
+                  {props.d6}
               </button>
-              <button>
-                  hello
+              <button
+                  onClick={props.handleD7}
+              >
+                  {props.d7}
               </button>
-              <button>
-                  hello
+              <button
+                  onClick={props.handleD8}
+              >
+                  {props.d8}
               </button>
-              <button>
-                  hello
+              <button
+                  onClick={props.handleD9}
+              >
+                  {props.d9}
               </button>
-              <button>
-                  hello
+              <button
+                  onClick={props.handleD10}
+              >
+                  {props.d10}
+              </button>
+          </div>
+          <div>
+              <button
+                  onClick={props.handleE1}
+              >
+                  {props.e1}
+              </button>
+              <button
+                  onClick={props.handleE2}
+              >
+                  {props.e2}
+              </button>
+              <button
+                  onClick={props.handleE3}
+              >
+                  {props.e3}
+              </button>
+              <button
+                  onClick={props.handleE4}
+              >
+                  {props.e4}
+              </button>
+              <button
+                  onClick={props.handleE5}
+              >
+                  {props.e5}
+              </button>
+              <button
+                  onClick={props.handleE6}
+              >
+                  {props.e6}
+              </button>
+              <button
+                  onClick={props.handleE7}
+              >
+                  {props.e7}
+              </button>
+              <button
+                  onClick={props.handleE8}
+              >
+                  {props.e8}
+              </button>
+              <button
+                  onClick={props.handleE9}
+              >
+                  {props.e9}
+              </button>
+              <button
+                  onClick={props.handleE10}
+              >
+                  {props.e10}
+              </button>
+          </div>
+          <div>
+              <button
+                  onClick={props.handleF1}
+              >
+                  {props.f1}
+              </button>
+              <button
+                  onClick={props.handleF2}
+              >
+                  {props.f2}
+              </button>
+              <button
+                  onClick={props.handleF3}
+              >
+                  {props.f3}
+              </button>
+              <button
+                  onClick={props.handleF4}
+              >
+                  {props.f4}
+              </button>
+              <button
+                  onClick={props.handleF5}
+              >
+                  {props.f5}
+              </button>
+              <button
+                  onClick={props.handleF6}
+              >
+                  {props.f6}
+              </button>
+              <button
+                  onClick={props.handleF7}
+              >
+                  {props.f7}
+              </button>
+              <button
+                  onClick={props.handleF8}
+              >
+                  {props.f8}
+              </button>
+              <button
+                  onClick={props.handleF9}
+              >
+                  {props.f9}
+              </button>
+              <button
+                  onClick={props.handleF10}
+              >
+                  {props.f10}
               </button>
           </div>
       </div>

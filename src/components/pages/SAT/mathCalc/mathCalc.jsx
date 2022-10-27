@@ -8,11 +8,14 @@ import NotFound from "../../NotFound/NotFound";
 
 const MathCalc = () => {
     const { id } = useParams();
-    const [choice, setChoice] = React.useState(sessionStorage.getItem(`SAT.mathCalc.${id}.choice`));
+    const qKey = btoa(encodeURIComponent(`SAT.mathCalc.${id}.choice`));
+    const [choice, setChoice] = React.useState(sessionStorage.getItem(qKey));
     const correct = 'b';
     const max = '100';
     let navigate = useNavigate();
     let defaultShow = false;
+
+
 
     const handlePrevClick = () => {
         navigate(`/q/sat/math/c/${Number(id) - 1}`);
@@ -31,13 +34,13 @@ const MathCalc = () => {
     const handleClick = (event, cid) => {
         setShow(true);
         setChoice(cid);
-        sessionStorage.setItem(`SAT.mathCalc.${id}.choice`, cid)
+        sessionStorage.setItem(qKey, cid)
     }
     const handleReset = (event) => {
         event.preventDefault();
         setShow(false);
         setChoice('');
-        sessionStorage.setItem(`SAT.mathCalc.${id}.choice`, '')
+        sessionStorage.setItem(qKey, '')
     }
     if (choice) {
         if (
