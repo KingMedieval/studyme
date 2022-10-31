@@ -9,6 +9,14 @@ import {
     Routes,
 } from "react-router-dom";
 
+//TODO:
+//  make per user sessions
+//  start backend
+//  question input page
+//  encryption?
+//  create randomized tests?
+//      maybe shareable seed?
+
 function Home() {
     return(
         <div className="App">
