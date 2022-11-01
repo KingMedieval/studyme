@@ -1,0 +1,394 @@
+{
+  "trig": {
+    "B1": {
+      "name": "sin",
+      "mquil": "\\sin("
+    },
+    "B2": {
+      "name": "cos",
+      "mquil": "\\cos("
+    },
+    "B3": {
+      "name": "tan",
+      "mquil": "\\tan("
+    },
+    "B4": {
+      "name": "arcsin",
+      "mquil": "\\arcsin("
+    },
+    "B5": {
+      "name": "arccos",
+      "mquil": "\\arccos("
+    },
+    "B6": {
+      "name": "arctan",
+      "mquil": "\\arctan("
+    },
+    "C1": {
+      "name": "csc",
+      "mquil": "\\csc("
+    },
+    "C2": {
+      "name": "sec",
+      "mquil": "\\sec("
+    },
+    "C3": {
+      "name": "cot",
+      "mquil": "\\cot("
+    },
+    "C4": {
+      "name": "arccsc",
+      "mquil": "\\arccsc("
+    },
+    "C5": {
+      "name": "arcsec",
+      "mquil": "\\arcsec("
+    },
+    "C6": {
+      "name": "arccot",
+      "mquil": "\\arccot("
+    },
+    "D1": {
+      "name": "sinh",
+      "mquil": "\\sinh("
+    },
+    "D2": {
+      "name": "cosh",
+      "mquil": "\\cosh("
+    },
+    "D3": {
+      "name": "tanh",
+      "mquil": "\\tanh("
+    },
+    "D4": {
+      "name": "arcsinh",
+      "mquil": "\\arcsinh("
+    },
+    "D5": {
+      "name": "arccosh",
+      "mquil": "\\arccosh("
+    },
+    "D6": {
+      "name": "arctanh",
+      "mquil": "\\arctanh("
+    },
+    "E1": {
+      "name": "csch",
+      "mquil": "\\csch("
+    },
+    "E2": {
+      "name": "sech",
+      "mquil": "\\sech("
+    },
+    "E3": {
+      "name": "coth",
+      "mquil": "\\coth("
+    },
+    "E4": {
+      "name": "arccsch",
+      "mquil": "\\arccsch("
+    },
+    "E5": {
+      "name": "arcsech",
+      "mquil": "\\arcsech("
+    },
+    "E6": {
+      "name": "arccoth",
+      "mquil": "\\arccoth("
+    }
+  },
+  "calc": {
+    "B1": {
+      "name": "",
+      "mquil": ""
+    },
+    "B2": {
+      "name": "",
+      "mquil": ""
+    },
+    "B3": {
+      "name": "",
+      "mquil": ""
+    },
+    "B4": {
+      "name": "",
+      "mquil": ""
+    },
+    "B5": {
+      "name": "",
+      "mquil": ""
+    },
+    "B6": {
+      "name": "",
+      "mquil": ""
+    },
+    "C1": {
+      "name": "",
+      "mquil": ""
+    },
+    "C2": {
+      "name": "",
+      "mquil": ""
+    },
+    "C3": {
+      "name": "",
+      "mquil": ""
+    },
+    "C4": {
+      "name": "",
+      "mquil": ""
+    },
+    "C5": {
+      "name": "",
+      "mquil": ""
+    },
+    "C6": {
+      "name": "",
+      "mquil": ""
+    },
+    "D1": {
+      "name": "",
+      "mquil": ""
+    },
+    "D2": {
+      "name": "",
+      "mquil": ""
+    },
+    "D3": {
+      "name": "",
+      "mquil": ""
+    },
+    "D4": {
+      "name": "",
+      "mquil": ""
+    },
+    "D5": {
+      "name": "",
+      "mquil": ""
+    },
+    "D6": {
+      "name": "",
+      "mquil": ""
+    },
+    "E1": {
+      "name": "",
+      "mquil": ""
+    },
+    "E2": {
+      "name": "",
+      "mquil": ""
+    },
+    "E3": {
+      "name": "",
+      "mquil": ""
+    },
+    "E4": {
+      "name": "",
+      "mquil": ""
+    },
+    "E5": {
+      "name": "",
+      "mquil": ""
+    },
+    "E6": {
+      "name": "",
+      "mquil": ""
+    }
+  },
+  "greek": {
+    "B1": {
+      "name": "α",
+      "mquil": "\\alpha"
+    },
+    "B2": {
+      "name": "β",
+      "mquil": "\\beta"
+    },
+    "B3": {
+      "name": "γ",
+      "mquil": "\\gamma"
+    },
+    "B4": {
+      "name": "δ",
+      "mquil": "\\delta"
+    },
+    "B5": {
+      "name": "ε",
+      "mquil": "\\epsilon"
+    },
+    "B6": {
+      "name": "ζ",
+      "mquil": "\\zeta"
+    },
+    "C1": {
+      "name": "η",
+      "mquil": "\\eta"
+    },
+    "C2": {
+      "name": "θ",
+      "mquil": "\\theta"
+    },
+    "C3": {
+      "name": "ι",
+      "mquil": "\\iota"
+    },
+    "C4": {
+      "name": "κ",
+      "mquil": "\\kappa"
+    },
+    "C5": {
+      "name": "λ",
+      "mquil": "\\lambda"
+    },
+    "C6": {
+      "name": "μ",
+      "mquil": "\\mu"
+    },
+    "D1": {
+      "name": "ν",
+      "mquil": "\\nu"
+    },
+    "D2": {
+      "name": "ξ",
+      "mquil": "\\xi"
+    },
+    "D3": {
+      "name": "ο",
+      "mquil": "o"
+    },
+    "D4": {
+      "name": "π",
+      "mquil": "\\pi"
+    },
+    "D5": {
+      "name": "ρ",
+      "mquil": "\\rho"
+    },
+    "D6": {
+      "name": "σ",
+      "mquil": "\\sigma"
+    },
+    "E1": {
+      "name": "τ",
+      "mquil": "\\tau"
+    },
+    "E2": {
+      "name": "υ",
+      "mquil": "\\upsilon"
+    },
+    "E3": {
+      "name": "φ",
+      "mquil": "\\phi"
+    },
+    "E4": {
+      "name": "χ",
+      "mquil": "\\chi"
+    },
+    "E5": {
+      "name": "ψ",
+      "mquil": "\\psi"
+    },
+    "E6": {
+      "name": "ω",
+      "mquil": "\\omega"
+    }
+  },
+  "greekCaps": {
+    "B1": {
+      "name": "Α",
+      "mquil": "A"
+    },
+    "B2": {
+      "name": "B",
+      "mquil": "B"
+    },
+    "B3": {
+      "name": "Γ",
+      "mquil": "\\Gamma"
+    },
+    "B4": {
+      "name": "Δ",
+      "mquil": "\\Delta"
+    },
+    "B5": {
+      "name": "E",
+      "mquil": "E"
+    },
+    "B6": {
+      "name": "Z",
+      "mquil": "Z"
+    },
+    "C1": {
+      "name": "H",
+      "mquil": "H"
+    },
+    "C2": {
+      "name": "Θ",
+      "mquil": "\\Theta"
+    },
+    "C3": {
+      "name": "I",
+      "mquil": "I"
+    },
+    "C4": {
+      "name": "K",
+      "mquil": "K"
+    },
+    "C5": {
+      "name": "Λ",
+      "mquil": "\\Lambda"
+    },
+    "C6": {
+      "name": "M",
+      "mquil": "M"
+    },
+    "D1": {
+      "name": "N",
+      "mquil": "N"
+    },
+    "D2": {
+      "name": "Ξ",
+      "mquil": "\\Xi"
+    },
+    "D3": {
+      "name": "O",
+      "mquil": "O"
+    },
+    "D4": {
+      "name": "Π",
+      "mquil": "\\Pi"
+    },
+    "D5": {
+      "name": "P",
+      "mquil": "P"
+    },
+    "D6": {
+      "name": "Σ",
+      "mquil": "\\Sigma"
+    },
+    "E1": {
+      "name": "T",
+      "mquil": "T"
+    },
+    "E2": {
+      "name": "ϒ",
+      "mquil": "\\Upsilon"
+    },
+    "E3": {
+      "name": "Φ",
+      "mquil": "\\Phi"
+    },
+    "E4": {
+      "name": "X",
+      "mquil": "X"
+    },
+    "E5": {
+      "name": "Ψ",
+      "mquil": "\\Psi"
+    },
+    "E6": {
+      "name": "Ω",
+      "mquil": "\\Omega"
+    }
+  }
+}

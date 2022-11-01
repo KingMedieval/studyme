@@ -26,6 +26,12 @@ const MathKeyboard = (props) => {
               >
                   {props.a4}
               </button>
+              <button
+                  onClick={props.handleA5}
+                  className={"button"}
+              >
+                  {props.a5}
+              </button>
           </div>
           <div>
               <button

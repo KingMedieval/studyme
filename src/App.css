@@ -1,5 +1,7 @@
 
-
+* {
+  outline: dashed;
+}
 
 .App {
   text-align: center;
