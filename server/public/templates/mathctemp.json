@@ -1,0 +1,39 @@
+{
+  "qid": "1",
+  "orig": "Maria is staying at a hotel that charges $\\$99.95$ per night plus tax for a room. A tax of $8\\%$ is applied to the room rate, and an additional onetime untaxed fee of $\\$5.00$ is charged by the hotel. Which of the following represents Maria’s total charge, in dollars, for staying $x$ nights?",
+  "base": "Maria is staying at a hotel that charges $\\$${c1}$ per night plus tax for a room. A tax of $${c2}\\%$ is applied to the room rate, and an additional onetime untaxed fee of $\\$${c3}$ is charged by the hotel. Which of the following represents Maria’s total charge, in dollars, for staying $x$ nights?",
+  "variables": {
+    "c1": {
+      "min": 80,
+      "max": 500,
+      "type": "float",
+      "prec": 2
+    },
+    "c2": {
+      "min": 8,
+      "max": 20,
+      "type": "int",
+      "prec": 0
+    },
+    "c3": {
+      "min": 1,
+      "max": 50,
+      "type": "float",
+      "prec": 2
+    }
+  },
+  "logic": "(1+c2*0.01)*(c1*x)+c3",
+  "mc": {
+    "a": "$(${c1}+${c2*0.01}x)+${c3}$",
+    "b": "$${1+c2*0.01}(${c1}x)+${c3}$",
+    "c": "$${1+c2*0.01}(${c1}x+${c3})$",
+    "d": "$${1+c2*0.01}(${c1}+${c3})x$"
+  },
+  "stats": {
+    "a": 0,
+    "b": 0,
+    "c": 0,
+    "d": 0
+  },
+  "solution": "total with tax added is calculated by subtotal $\\times ${1+c2*0.01}$\nSubtotal is calculated by $${c1} \\times$ number of nights\nFinal solution will be in the form of $(1+\\textrm{tax rate}*\\frac{1}{100})*(\\textrm{price per night}*x \\textrm{ nights})+\\textrm{untaxed charge}$"
+}
