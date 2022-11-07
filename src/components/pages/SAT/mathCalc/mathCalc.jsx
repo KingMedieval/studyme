@@ -15,7 +15,13 @@ const MathCalc = () => {
     let navigate = useNavigate();
     let defaultShow = false;
 
+    let response = fetch("http://localhost:6900/users/", {
+        method: "GET"
+    })
+        .then((res) => {
+            return res.json()});
 
+    console.log(JSON.stringify(response));
 
     const handlePrevClick = () => {
         navigate(`/q/sat/math/c/${Number(id) - 1}`);
@@ -25,6 +31,7 @@ const MathCalc = () => {
         navigate(`/q/sat/math/c/${Number(id) + 1}`);
         navigate(0);
     }
+
     if (choice) {
         defaultShow = true;
     }
@@ -53,7 +60,7 @@ const MathCalc = () => {
                     <div style={{pointerEvents: 'none'}}>
                         <Question
                             id={id}
-                            qText={"Maria is staying at a hotel that charges $\\$99.95$ per night plus tax for a room. A tax of $8\\%$ is applied to the room rate, and an additional onetime untaxed fee of $\\$5.00$ is charged by the hotel. Which of the following represents Maria’s total charge, in dollars, for staying $x$ nights?"}
+                            qText={response.base}
                             qQ={""}
                         />
                         <div className={"invalidAns"}>
@@ -94,30 +101,30 @@ const MathCalc = () => {
             <div style={{ pointerEvents: show ? 'none' : '' }}>
                 <Question
                     id={id}
-                    qText={"Maria is staying at a hotel that charges $\\$99.95$ per night plus tax for a room. A tax of $8\\%$ is applied to the room rate, and an additional onetime untaxed fee of $\\$5.00$ is charged by the hotel. Which of the following represents Maria’s total charge, in dollars, for staying $x$ nights?"}
+                    qText={response.base}
                     qQ={""}
                 />
                 <MCQChoice
                     cid={"a"}
-                    cText={"$(99.95 + 0.08x) + 5$"}
+                    cText={response.mc.a}
                     onClick={(e) => handleClick(e, "a")}
                     className={stylesheet('a')}
                 />
                 <MCQChoice
                     cid={"b"}
-                    cText={"$1.08(99.95x) + 5$"}
+                    cText={response.mc.b}
                     onClick={(e) => handleClick(e, "b")}
                     className={stylesheet('b')}
                 />
                 <MCQChoice
                     cid={"c"}
-                    cText={"$1.08(99.95x + 5)$"}
+                    cText={response.mc.c}
                     onClick={(e) => handleClick(e, "c")}
                     className={stylesheet('c')}
                 />
                 <MCQChoice
                     cid={"d"}
-                    cText={"$1.08(99.95 + 5)x$"}
+                    cText={response.mc.d}
                     onClick={(e) => handleClick(e, "d")}
                     className={stylesheet('d')}
                 />

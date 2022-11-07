@@ -19,7 +19,8 @@ router.get('/', function(req, res, next) {
     i++;
   }
 
-  res.send(JSON.stringify(question).replace(/\${c1}/g,variables[0]).replace(/\${c2}/g,variables[1]).replace(/\${c3}/g,variables[2]));
+  res.send(res.render('mathctemp', {c1: variables[0], c2: variables[1], c3: variables[2]}));
+  //res.send(JSON.stringify(question));
 });
 
 module.exports = router;
