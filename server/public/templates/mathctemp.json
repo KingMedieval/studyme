@@ -22,12 +22,12 @@
       "prec": 2
     }
   },
-  "logic": "(1+c2*0.01)*(c1*x)+c3",
+  "logic": "(1+c2/100)*(c1*x)+c3",
   "mc": {
-    "a": "$ (${c1}+${c2*0.01}x)+${c3} $",
-    "b": "$ ${1+c2*0.01}(${c1}x)+${c3} $",
-    "c": "$ ${1+c2*0.01}(${c1}x+${c3}) $",
-    "d": "$ ${1+c2*0.01}(${c1}+${c3})x $"
+    "a": "$ (${c1}+${c2/100}x)+${c3} $",
+    "b": "$ ${(c2+100)/100}(${c1}x)+${c3} $",
+    "c": "$ ${(c2+100)/100}(${c1}x+${c3}) $",
+    "d": "$ ${(c2+100)/100}(${c1}+${c3})x $"
   },
   "correct": "b",
   "stats": {
@@ -36,5 +36,5 @@
     "c": 0,
     "d": 0
   },
-  "solution": "total with tax added is calculated by subtotal $\\times ${1+c2*0.01}$\nSubtotal is calculated by $${c1} \\times$ number of nights\nFinal solution will be in the form of $(1+\\textrm{tax rate}*\\frac{1}{100})*(\\textrm{price per night}*x \\textrm{ nights})+\\textrm{untaxed charge}$"
+  "solution": "total with tax added is calculated by subtotal $\\times ${1+c2/100}$\nSubtotal is calculated by $${c1} \\times$ number of nights\nFinal solution will be in the form of $(1+\\textrm{tax rate}*\\frac{1}{100})*(\\textrm{price per night}*x \\textrm{ nights})+\\textrm{untaxed charge}$"
 }

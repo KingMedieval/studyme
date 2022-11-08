@@ -10,18 +10,22 @@ const MathCalc = () => {
     const { id } = useParams();
     const qKey = btoa(encodeURIComponent(`SAT.mathCalc.${id}.choice`));
     const [choice, setChoice] = React.useState(sessionStorage.getItem(qKey));
-    const correct = 'b';
     const max = '100';
     let navigate = useNavigate();
     let defaultShow = false;
+    const [response, setResponse] = React.useState(null);
+    const [correct, setCorrect] = React.useState('');
+    const seed = Math.random();
+    React.useEffect(() => {
+         fetch("http://localhost:6900/satmath", {method: "GET"})
+             .then((res) => res.json())
+             .then((data) => {
+                 setResponse(data);
+                 setCorrect(data.correct);
+             })
+             .catch((e) => console.log(e));
+    },[]);
 
-    let response = fetch("http://localhost:6900/users/", {
-        method: "GET"
-    })
-        .then((res) => {
-            return res.json()});
-
-    console.log(JSON.stringify(response));
 
     const handlePrevClick = () => {
         navigate(`/q/sat/math/c/${Number(id) - 1}`);
@@ -60,7 +64,7 @@ const MathCalc = () => {
                     <div style={{pointerEvents: 'none'}}>
                         <Question
                             id={id}
-                            qText={response.base}
+                            qText={response ? response.mc.base : " "}
                             qQ={""}
                         />
                         <div className={"invalidAns"}>
@@ -101,30 +105,30 @@ const MathCalc = () => {
             <div style={{ pointerEvents: show ? 'none' : '' }}>
                 <Question
                     id={id}
-                    qText={response.base}
+                    qText={response ? response.base : " "}
                     qQ={""}
                 />
                 <MCQChoice
                     cid={"a"}
-                    cText={response.mc.a}
+                    cText={response ? response.mc.a : " "}
                     onClick={(e) => handleClick(e, "a")}
                     className={stylesheet('a')}
                 />
                 <MCQChoice
                     cid={"b"}
-                    cText={response.mc.b}
+                    cText={response ? response.mc.b : " "}
                     onClick={(e) => handleClick(e, "b")}
                     className={stylesheet('b')}
                 />
                 <MCQChoice
                     cid={"c"}
-                    cText={response.mc.c}
+                    cText={response ? response.mc.c : " "}
                     onClick={(e) => handleClick(e, "c")}
                     className={stylesheet('c')}
                 />
                 <MCQChoice
                     cid={"d"}
-                    cText={response.mc.d}
+                    cText={response ? response.mc.d : " "}
                     onClick={(e) => handleClick(e, "d")}
                     className={stylesheet('d')}
                 />
