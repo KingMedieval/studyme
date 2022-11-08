@@ -15,9 +15,9 @@ const MathCalc = () => {
     let defaultShow = false;
     const [response, setResponse] = React.useState(null);
     const [correct, setCorrect] = React.useState('');
-    const seed = Math.random();
+    const seed = sessionStorage.getItem(btoa('seed')) ? sessionStorage.getItem(btoa('seed')) : sessionStorage.setItem(btoa('seed'), Math.floor(Math.random() * 100000000).toString(16).toUpperCase());
     React.useEffect(() => {
-         fetch("http://localhost:6900/satmath", {method: "GET"})
+         fetch(`http://localhost:6900/satmath/?qid=${id}&seed=${seed}`, {method: "GET"})
              .then((res) => res.json())
              .then((data) => {
                  setResponse(data);
@@ -64,7 +64,7 @@ const MathCalc = () => {
                     <div style={{pointerEvents: 'none'}}>
                         <Question
                             id={id}
-                            qText={response ? response.mc.base : " "}
+                            qText={response ? response.base : ''}
                             qQ={""}
                         />
                         <div className={"invalidAns"}>
