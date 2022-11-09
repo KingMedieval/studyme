@@ -5,6 +5,7 @@ import Question from "../../../elements/Question/Question";
 import MCQChoice from "../../../elements/MCQChoice/MCQChoice";
 import Arrows from "../../../elements/Arrows/Arrows";
 import NotFound from "../../NotFound/NotFound";
+import shuffleArray from "../../../functions/shuffleArray";
 
 const MathCalc = () => {
     const { id } = useParams();
@@ -15,17 +16,31 @@ const MathCalc = () => {
     let defaultShow = false;
     const [response, setResponse] = React.useState(null);
     const [correct, setCorrect] = React.useState('');
-    const seed = sessionStorage.getItem(btoa('seed')) ? sessionStorage.getItem(btoa('seed')) : sessionStorage.setItem(btoa('seed'), Math.floor(Math.random() * 100000000).toString(16).toUpperCase());
+    const [mcq, setMcq] = React.useState([]);
+    const seed = sessionStorage.getItem(btoa('seed')) ?
+        sessionStorage.getItem(btoa('seed')) :
+        sessionStorage.setItem(
+            btoa('seed'),
+            Math.floor(Math.random() * 100000000)
+                .toString(16)
+                .toUpperCase());
+
     React.useEffect(() => {
-         fetch(`http://localhost:6900/satmath/?qid=${id}&seed=${seed}`, {method: "GET"})
+         fetch(`http://localhost:6900/satmath/?qid=${id}&seed=${seed}`,
+             {method: "GET"})
              .then((res) => res.json())
              .then((data) => {
                  setResponse(data);
                  setCorrect(data.correct);
+                 setMcq(shuffleArray([
+                     ['a', data.mc.a],
+                     ['b', data.mc.b],
+                     ['c', data.mc.c],
+                     ['d', data.mc.d]], seed, id));
              })
              .catch((e) => console.log(e));
+         console.log('effect');
     },[]);
-
 
     const handlePrevClick = () => {
         navigate(`/q/sat/math/c/${Number(id) - 1}`);
@@ -53,6 +68,12 @@ const MathCalc = () => {
         setChoice('');
         sessionStorage.setItem(qKey, '')
     }
+    if (!(response)) {
+        return (
+            <>
+            </>
+        )
+    }
     if (choice) {
         if (
             !(  choice.toLowerCase() === 'a' ||
@@ -68,7 +89,8 @@ const MathCalc = () => {
                             qQ={""}
                         />
                         <div className={"invalidAns"}>
-                            Invalid answer choice is stored, press reset button to reset.
+                            Invalid answer choice is stored,
+                            press reset button to reset.
                         </div>
                     </div>
                     <Arrows
@@ -88,7 +110,6 @@ const MathCalc = () => {
         )
     }
 
-
     const stylesheet = (cid) => {
         if (!show) return 'choice';
 
@@ -99,40 +120,27 @@ const MathCalc = () => {
         }
     };
 
-
     return(
         <>
-            <div style={{ pointerEvents: show ? 'none' : '' }}>
+            <div>
                 <Question
                     id={id}
-                    qText={response ? response.base : " "}
+                    qText={response.base}
                     qQ={""}
                 />
-                <MCQChoice
-                    cid={"a"}
-                    cText={response ? response.mc.a : " "}
-                    onClick={(e) => handleClick(e, "a")}
-                    className={stylesheet('a')}
-                />
-                <MCQChoice
-                    cid={"b"}
-                    cText={response ? response.mc.b : " "}
-                    onClick={(e) => handleClick(e, "b")}
-                    className={stylesheet('b')}
-                />
-                <MCQChoice
-                    cid={"c"}
-                    cText={response ? response.mc.c : " "}
-                    onClick={(e) => handleClick(e, "c")}
-                    className={stylesheet('c')}
-                />
-                <MCQChoice
-                    cid={"d"}
-                    cText={response ? response.mc.d : " "}
-                    onClick={(e) => handleClick(e, "d")}
-                    className={stylesheet('d')}
-                />
-
+            </div>
+            <div style={{ pointerEvents: show ? 'none' : '' }}>
+                {mcq.map((element, index) => {
+                    return(
+                        <div key={index}>
+                            <MCQChoice
+                                cid={String.fromCharCode(index+97)}
+                                cText={element[1]}
+                                onClick={(e) => handleClick(e, element[0])}
+                                className={stylesheet(element[0])} />
+                        </div>
+                    );
+                })}
             </div>
             <Arrows
                 id={id}
