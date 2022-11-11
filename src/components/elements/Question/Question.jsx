@@ -17,7 +17,8 @@ const Question = (props) => {
                 </Latex>
                 <div style={{
                     marginTop: '1em',
-                    textAlign: 'center'
+                    textAlign: 'center',
+                    fontSize: '1.5em'
                 }}>
                     <Latex>
                         {props.qQ}

@@ -6,6 +6,7 @@ import MCQChoice from "../../../elements/MCQChoice/MCQChoice";
 import Arrows from "../../../elements/Arrows/Arrows";
 import NotFound from "../../NotFound/NotFound";
 import shuffleArray from "../../../functions/shuffleArray";
+import Graph from "../../../elements/Graph/Graph";
 
 const MathCalc = () => {
     const { id } = useParams();
@@ -126,7 +127,7 @@ const MathCalc = () => {
                 <Question
                     id={id}
                     qText={response.base}
-                    qQ={""}
+                    qQ={response.subBase}
                 />
             </div>
             <div style={{ pointerEvents: show ? 'none' : '' }}>

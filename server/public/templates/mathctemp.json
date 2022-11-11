@@ -1,49 +1,45 @@
 {
-  "qid": "1",
-  "calc": true,
+  "qid": 2,
+  "calc": false,
   "content": "Heart of Algebra",
-  "Source": "Khan Academy",
-  "orig": "Maria is staying at a hotel that charges $\\$99.95$ per night plus tax for a room. A tax of $8\\%$ is applied to the room rate, and an additional onetime untaxed fee of $\\$5.00$ is charged by the hotel. Which of the following represents Maria’s total charge, in dollars, for staying $x$ nights?",
-  "base": "Maria is staying at a hotel that charges $\\$#{c1}$ per night plus tax for a room. A tax of $#{c2}\\%$ is applied to the room rate, and an additional onetime untaxed fee of $\\$#{c3}$ is charged by the hotel. Which of the following represents Maria’s total charge, in dollars, for staying $x$ nights?",
+  "source": "US QAS OCT Q7",
+  "orig": "Which value is a solution to the given equation?",
+  "base": "Which value is a solution to the given equation?",
+  "subOrig": "$\\frac{(x-4)(x+2)}{(x-4)}=0$",
+  "subBase": "$\\frac{(x-#{c1})(x+#{c2})}{(x-#{c1})}=0$",
   "variables": {
     "c1": {
-      "min": 80,
-      "max": 500,
-      "type": "float",
-      "prec": 2
-    },
-    "c2": {
-      "min": 8,
-      "max": 20,
+      "min": 1,
+      "max": 10,
       "type": "int",
       "prec": 0
     },
-    "c3": {
+    "c2": {
       "min": 1,
-      "max": 50,
-      "type": "float",
-      "prec": 2
+      "max": 10,
+      "type": "int",
+      "prec": 0
     }
   },
-  "logic": "(1+c2/100)*(c1*x)+c3",
+  "logic": "(x+c2)*((x-c1)/(x-c1))=0",
   "mc": {
-    "a": "$(#{c1}+#{c2/100}x)+#{c3}$",
-    "b": "$#{(c2+100)/100}(#{c1}x)+#{c3}$",
-    "c": "$#{(c2+100)/100}(#{c1}x+#{c3})$",
-    "d": "$#{(c2+100)/100}(#{c1}+#{c3})x$"
+    "a": "$#{c1}$",
+    "b": "$#{c2}$",
+    "c": "$0$",
+    "d": "$#{-1*c2}$"
   },
   "origmc": {
-    "a": "$(99.95+0.08x)+5$",
-    "b": "$1.08(99.95x)+5$",
-    "c": "$1.08(99.95x+5)$",
-    "d": "$1.08(99.95+5)x$"
+    "a": "$4$",
+    "b": "$2$",
+    "c": "$0$",
+    "d": "$-2$"
   },
-  "correct": "b",
+  "correct": "d",
   "stats": {
     "a": 0,
     "b": 0,
     "c": 0,
     "d": 0
   },
-  "solution": "total with tax added is calculated by subtotal $\\times#{(c2+100)/100}$\nSubtotal is calculated by #{c1} \\times$ number of nights\nFinal solution will be in the form of $(1+\\textrm{tax rate}*\\frac{1}{100})*(\\textrm{price per night}*x \\textrm{num of nights})+\\textrm{untaxed charge}$"
+  "solution": "$\\frac{(x-#{c1})}{(x-#{c1})} cancels each other then solve for x"
 }
