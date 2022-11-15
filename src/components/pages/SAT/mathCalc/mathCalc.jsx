@@ -5,16 +5,16 @@ import Question from "../../../elements/Question/Question";
 import MCQChoice from "../../../elements/MCQChoice/MCQChoice";
 import Arrows from "../../../elements/Arrows/Arrows";
 import NotFound from "../../NotFound/NotFound";
-import shuffleArray from "../../../functions/shuffleArray";
+import { shuffleArray } from "../../../functions/shuffleArray";
 import Graph from "../../../elements/Graph/Graph";
 
 const MathCalc = () => {
+    let navigate = useNavigate();
+    let defaultShow = false;
     const { id } = useParams();
     const qKey = btoa(encodeURIComponent(`SAT.mathCalc.${id}.choice`));
     const [choice, setChoice] = React.useState(sessionStorage.getItem(qKey));
-    const max = '100';
-    let navigate = useNavigate();
-    let defaultShow = false;
+    const [max, setMax] = React.useState(100);
     const [response, setResponse] = React.useState(null);
     const [correct, setCorrect] = React.useState('');
     const [mcq, setMcq] = React.useState([]);
@@ -33,6 +33,7 @@ const MathCalc = () => {
              .then((data) => {
                  setResponse(data);
                  setCorrect(data.correct);
+                 setMax(data.max);
                  setMcq(shuffleArray([
                      ['a', data.mc.a],
                      ['b', data.mc.b],
@@ -89,6 +90,7 @@ const MathCalc = () => {
                             qText={response ? response.base : ''}
                             qQ={""}
                         />
+                        <Graph />
                         <div className={"invalidAns"}>
                             Invalid answer choice is stored,
                             press reset button to reset.
@@ -96,7 +98,7 @@ const MathCalc = () => {
                     </div>
                     <Arrows
                     id={id}
-                    last={max}
+                    last={max.toString()}
                     onReset={(e) => handleReset(e)}
                     onPrev={handlePrevClick}
                     onNext={handleNextClick}
@@ -129,6 +131,7 @@ const MathCalc = () => {
                     qText={response.base}
                     qQ={response.subBase}
                 />
+                <Graph />
             </div>
             <div style={{ pointerEvents: show ? 'none' : '' }}>
                 {mcq.map((element, index) => {
@@ -145,7 +148,7 @@ const MathCalc = () => {
             </div>
             <Arrows
                 id={id}
-                last={max}
+                last={max.toString()}
                 onReset={(e) => handleReset(e)}
                 onPrev={handlePrevClick}
                 onNext={handleNextClick}

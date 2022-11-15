@@ -11,7 +11,6 @@ import {
 
 //TODO:
 //  make per user sessions
-//  start backend
 //  question input page
 //  encryption?
 //  create randomized tests?

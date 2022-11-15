@@ -1,45 +1,48 @@
 {
-  "qid": 2,
-  "calc": false,
+  "_id": {
+    "$oid": "636c728c2fc399d7cd23065b"
+  },
+  "qid": "3",
   "content": "Heart of Algebra",
-  "source": "US QAS OCT Q7",
-  "orig": "Which value is a solution to the given equation?",
-  "base": "Which value is a solution to the given equation?",
-  "subOrig": "$\\frac{(x-4)(x+2)}{(x-4)}=0$",
-  "subBase": "$\\frac{(x-#{c1})(x+#{c2})}{(x-#{c1})}=0$",
-  "variables": {
-    "c1": {
-      "min": 1,
-      "max": 10,
-      "type": "int",
-      "prec": 0
-    },
-    "c2": {
-      "min": 1,
-      "max": 10,
-      "type": "int",
-      "prec": 0
-    }
-  },
-  "logic": "(x+c2)*((x-c1)/(x-c1))=0",
-  "mc": {
-    "a": "$#{c1}$",
-    "b": "$#{c2}$",
-    "c": "$0$",
-    "d": "$#{-1*c2}$"
-  },
+  "calc": false,
+  "source": "US QAS OCT Q3",
+  "subOrig": "$\\begin{array}{lcl} x=4 \\\\ y=\\frac{x}{4}+2 \\end{array}$",
+  "orig": "What is the solution (x, y) to the given system of equations?",
+  "base": "What is the solution (x,y) to the given system of equations?",
+  "correct": "b",
+  "logic": "(c1, c1/c1 + c2)",
   "origmc": {
-    "a": "$4$",
-    "b": "$2$",
-    "c": "$0$",
-    "d": "$-2$"
+    "a": "$(4,6)$",
+    "b": "$(4,3)$",
+    "c": "$(4,2)$",
+    "d": "$(4,1)$"
   },
-  "correct": "d",
+  "mc": {
+    "a": "$(#{c1},#{(c2+1)*2})$",
+    "b": "$(#{c1},#{c2+1})$",
+    "c": "$(#{c1},#{c1})$",
+    "d": "$(#{c1},#{c1-1})$"
+  },
+  "solution": "$x=#{c1}, y=1+#{c2}$",
   "stats": {
     "a": 0,
     "b": 0,
     "c": 0,
     "d": 0
   },
-  "solution": "$\\frac{(x-#{c1})}{(x-#{c1})} cancels each other then solve for x"
+  "subBase": "$\\begin{array}{lcl} x=#{c1} \\\\ y=\\frac{x}{#{c1}}+#{c2} \\end{array}$",
+  "variables": {
+    "c1": {
+      "min": 1,
+      "max": 9,
+      "type": "int",
+      "prec": 0
+    },
+    "c2": {
+      "min": 1,
+      "max": 9,
+      "type": "int",
+      "prec": 0
+    }
+  }
 }

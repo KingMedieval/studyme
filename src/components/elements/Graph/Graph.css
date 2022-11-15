@@ -1,8 +1,23 @@
 .container {
     text-align: center;
-    text-align:center;
     font-family: "Computer Modern Serif", serif;
+    font-size: 90%;
 }
 .graph {
     margin:auto;
+    max-width: 50%;
+}
+@media only screen and (max-width: 799px) {
+    /* CSS that should be displayed if width is equal to or less than 800px goes here */
+    .graph {
+        margin:auto;
+        max-width: 100%;
+    }
+}
+@media only screen and (min-width:800px) and (max-width: 1100px) {
+    /* CSS that should be displayed if width is equal to or less than 800px goes here */
+    .graph {
+        margin:auto;
+        max-width: 75%;
+    }
 }
