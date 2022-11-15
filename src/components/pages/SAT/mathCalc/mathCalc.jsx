@@ -8,6 +8,11 @@ import NotFound from "../../NotFound/NotFound";
 import { shuffleArray } from "../../../functions/shuffleArray";
 import Graph from "../../../elements/Graph/Graph";
 
+//TODO:
+//  graph integration
+//  solution integration
+//  maybe stats integration
+
 const MathCalc = () => {
     let navigate = useNavigate();
     let defaultShow = false;

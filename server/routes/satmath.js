@@ -6,8 +6,12 @@ const jade = require('jade')
 const { MongoClient } = require('mongodb');
 const { MONGO_URI } = require("../../config.json");
 const { shuffleArray } = require("../../src/components/functions/shuffleArray");
-
 const client = new MongoClient(MONGO_URI);
+
+//TODO:
+//  make this part more efficient
+//    less parsing db/maybe local cache?
+//  param input validation for nosql/xss attack
 
 /* GET users listing. */
 router.get('/', async function(req, res, next) {
@@ -51,9 +55,9 @@ router.get('/', async function(req, res, next) {
   }
   Object.assign(question, {"max":numDoc});
   console.log(JSON.stringify(vari));
-  //res.send(jade.renderFile('views/mathctemp.jade', vari));
-  res.send(jade.render(JSON.stringify(question), vari));
 
+  res.send(jade.render(JSON.stringify(question), vari));
+  //res.send(jade.renderFile('views/mathctemp.jade', vari));
   //res.send(JSON.stringify(question));
 });
 

@@ -16,6 +16,10 @@ const data = [
     { y: 8, x: 2 }
 ];
 
+//TODO:
+//  add props from parent component
+// find way to work multiple types of graph
+
 const Graph = (props) => {
     return (
         <div />
